@@ -1,3 +1,4 @@
+from collections import UserList
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 teamName = [
@@ -66,57 +67,57 @@ nameInGame = [
 ]
 
 userData = [
-            'LukeHarrison@kompetez', 'JamesMurphy@kompetez', 'admin@gmail.com', 'ChloeDiaz@kompetez', 
-            'Mrs.ShariThomas@kompetez', 'KristenReed@kompetez', 'ShawnVelazquez@kompetez', 'HeatherFox@kompetez', 
-            'AshleySandoval@kompetez', 'CrystalGalvan@kompetez', 'DanielChambers@kompetez', 'DannyMartinez@kompetez', 
-            'EmmaBailey@kompetez', 'KrystalGeorge@kompetez', 'DorothyMoore@kompetez', 'IsabellaLong@kompetez',
-            'RachelMoore@kompetez', 'MichaelPena@kompetez', 'JamieCarlson@kompetez', 'RichardMartinez@kompetez',
-            'DanielWilson@kompetez', 'DanielleMccoy@kompetez', 'JenniferPayne@kompetez', 'ConnorAtkinson@kompetez',
-            'JackArmstrong@kompetez', 'RichardVance@kompetez', 'DebraFleming@kompetez', 'KellieMercer@kompetez', 
-            'CherylYoung@kompetez', 'CraigRodriguez@kompetez', 'EricHall@kompetez', 'ChristopherDeleon@kompetez', 
-            'KathleenLeeMD@kompetez', 'AnnMiller@kompetez', 'NatashaWard@kompetez', 'MelissaSullivan@kompetez', 
-            'BrianRobbins@kompetez', 'TiffanyClaytonDVM@kompetez', 'BrianWade@kompetez', 'CaseyBrownJr.@kompetez', 
-            'CarrieRuiz@kompetez', 'KaylaHoffman@kompetez', 'JamesCastillo@kompetez', 'NathanHoffman@kompetez',
-            'DianeBell@kompetez', 'CarolRiley@kompetez', 'GabrielRobinson@kompetez', 'KellyHernandez@kompetez',
-            'DanielBaker@kompetez', 'AllisonBrooks@kompetez', 'CarlaBennett@kompetez', 'MichelleBruce@kompetez',
-            'JamieMedina@kompetez', 'RobertRhodes@kompetez', 'JacobKline@kompetez', 'DavidRoberts@kompetez',
-            'JenniferHarding@kompetez', 'LindaCabrera@kompetez', 'MartinMartinez@kompetez', 'SarahBriggs@kompetez',
-            'TraceyClements@kompetez', 'ZoeMiller@kompetez', 'EmilyWalton@kompetez', 'ShannonMorrow@kompetez',
-            'AlexanderCervantes@kompetez', 'BrandonTorres@kompetez', 'LeonardYoung@kompetez',
-            'MichaelWashington@kompetez', 'ShannonBurton@kompetez', 'AudreyMassey@kompetez', 'JamesKing@kompetez',
-            'JessicaPeterson@kompetez', 'NathanSingh@kompetez', 'Dr.LisaSims@kompetez', 'TaraRobbins@kompetez',
-            'MaryConner@kompetez', 'RobertoBell@kompetez', 'JeremyHenry@kompetez', 'LauraWalker@kompetez',
-            'TiffanyLewis@kompetez', 'EricWong@kompetez', 'MonicaShaw@kompetez', 'AdamKirby@kompetez',
-            'RyanPrice@kompetez', 'AnthonyCooper@kompetez', 'JacobWilson@kompetez', 'KarenWalker@kompetez', 
-            'KarenHenry@kompetez', 'JesseLittle@kompetez', 'LydiaOwens@kompetez', 'JeffreyJuarez@kompetez',
-            'MatthewStevenson@kompetez', 'MikaylaSmith@kompetez', 'JulieSmith@kompetez', 'JasonMoore@kompetez',
-            'EricWalsh@kompetez', 'JerryObrien@kompetez', 'GraceDavis@kompetez', 'ScottBrown@kompetez',
-            'LukeReid@kompetez', 'PaulCarter@kompetez',
-            'AmySaunders@kompetez', 'SydneyTorres@kompetez', 'DavidArellano@kompetez', 'AmySanchez@kompetez',
-            'AmyOlson@kompetez', 'DanielleZavala@kompetez', 'AshleyPerez@kompetez', 'CynthiaLane@kompetez',
-            'ChristineJohnson@kompetez', 'SarahStanton@kompetez', 'StaceyStevenson@kompetez', 'DeborahButler@kompetez',
-            'KevinMcgee@kompetez', 'SallyBuckley@kompetez', 'RobertLong@kompetez', 'RobertSexton@kompetez', 
-            'AshleyGardner@kompetez', 'BrandiDavis@kompetez', 'AlyssaBrownMD@kompetez', 'BarbaraBowen@kompetez', 
-            'DavidHuang@kompetez', 'AlexanderMartinez@kompetez', 'SarahBrown@kompetez', 'AntonioWilliams@kompetez', 
-            'KathrynThompson@kompetez', 'MelissaWade@kompetez', 'Dr.JeffreyKelly@kompetez', 'CrystalBentley@kompetez',
-            'JustinRose@kompetez', 'EddieOrtega@kompetez', 'BrandyRamirez@kompetez', 'DavidRush@kompetez', 
-            'VincentConley@kompetez', 'SusanWoods@kompetez', 'JefferyKaiserMD@kompetez', 'RebeccaFerguson@kompetez',
-            'BrianBrown@kompetez', 'GloriaDavis@kompetez', 'MatthewDavis@kompetez', 'ElizabethFields@kompetez', 
-            'BriannaDuarte@kompetez', 'AlanCole@kompetez', 'WilliamSanders@kompetez', 'AnnaSchmidt@kompetez', 
-            'CrystalRyan@kompetez', 'ToddMcgee@kompetez', 'ElizabethColeman@kompetez', 'KevinKemp@kompetez', 
-            'MariaObrien@kompetez', 'MelissaBrown@kompetez', 'NathanPeters@kompetez', 'JasmineRamos@kompetez',
-            'DennisHerman@kompetez', 'ShaneBlackburn@kompetez', 'BrendaDiaz@kompetez', 'FrancisThompson@kompetez',
-            'WilliamWilliams@kompetez', 'DaisyBall@kompetez', 'LauraAustin@kompetez', 'PatrickWhite@kompetez', 
-            'SherryMccormick@kompetez', 'SarahMurray@kompetez', 'BarrySmith@kompetez', 'AnnaYoung@kompetez',
-            'AdamMckinney@kompetez', 'CheyenneBrown@kompetez', 'MatthewFischer@kompetez', 'ShawnSosa@kompetez', 
-            'GregorySmith@kompetez', 'JonathanThomas@kompetez', 'JackMoyer@kompetez', 'TaylorLara@kompetez', 
-            'BelindaAndrews@kompetez', 'ThomasPhillips@kompetez', 'DonaldAnderson@kompetez', 'PaulBrooks@kompetez',
-            'SallyWood@kompetez', 'DustinNeal@kompetez', 'RobertCooper@kompetez', 'DeniseHuerta@kompetez',
-            'MarkGoodwin@kompetez', 'SaraNichols@kompetez', 'AbigailDaniel@kompetez', 'BrendaBradley@kompetez', 
-            'MichaelGiles@kompetez', 'TravisReilly@kompetez', 'HollyAvery@kompetez', 'RickeyPratt@kompetez', 
-            'CharlesMartinez@kompetez', 'NatashaBailey@kompetez', 'JoshuaMarquez@kompetez', 'Mr.AntonioJones@kompetez',
-            'DanielParker@kompetez', 'DavidWilliams@kompetez', 'TerryCummings@kompetez', 'BrianThomas@kompetez', 
-            'NathanPhillips@kompetez', 'CaitlinCalderon@kompetez', 'ChristineDurham@kompetez'
+            'LukeHarrison@kompetez.com', 'JamesMurphy@kompetez.com', 'ChloeDiaz@kompetez.com', 
+            'Mrs.ShariThomas@kompetez.com', 'KristenReed@kompetez.com', 'ShawnVelazquez@kompetez.com', 'HeatherFox@kompetez.com', 
+            'AshleySandoval@kompetez.com', 'CrystalGalvan@kompetez.com', 'DanielChambers@kompetez.com', 'DannyMartinez@kompetez.com', 
+            'EmmaBailey@kompetez.com', 'KrystalGeorge@kompetez.com', 'DorothyMoore@kompetez.com', 'IsabellaLong@kompetez.com',
+            'RachelMoore@kompetez.com', 'MichaelPena@kompetez.com', 'JamieCarlson@kompetez.com', 'RichardMartinez@kompetez.com',
+            'DanielWilson@kompetez.com', 'DanielleMccoy@kompetez.com', 'JenniferPayne@kompetez.com', 'ConnorAtkinson@kompetez.com',
+            'JackArmstrong@kompetez.com', 'RichardVance@kompetez.com', 'DebraFleming@kompetez.com', 'KellieMercer@kompetez.com', 
+            'CherylYoung@kompetez.com', 'CraigRodriguez@kompetez.com', 'EricHall@kompetez.com', 'ChristopherDeleon@kompetez.com', 
+            'KathleenLeeMD@kompetez.com', 'AnnMiller@kompetez.com', 'NatashaWard@kompetez.com', 'MelissaSullivan@kompetez.com', 
+            'BrianRobbins@kompetez.com', 'TiffanyClaytonDVM@kompetez.com', 'BrianWade@kompetez.com', 
+            'CarrieRuiz@kompetez.com', 'KaylaHoffman@kompetez.com', 'JamesCastillo@kompetez.com', 'NathanHoffman@kompetez.com',
+            'DianeBell@kompetez.com', 'CarolRiley@kompetez.com', 'GabrielRobinson@kompetez.com', 'KellyHernandez@kompetez.com',
+            'DanielBaker@kompetez.com', 'AllisonBrooks@kompetez.com', 'CarlaBennett@kompetez.com', 'MichelleBruce@kompetez.com',
+            'JamieMedina@kompetez.com', 'RobertRhodes@kompetez.com', 'JacobKline@kompetez.com', 'DavidRoberts@kompetez.com',
+            'JenniferHarding@kompetez.com', 'LindaCabrera@kompetez.com', 'MartinMartinez@kompetez.com', 'SarahBriggs@kompetez.com',
+            'TraceyClements@kompetez.com', 'ZoeMiller@kompetez.com', 'EmilyWalton@kompetez.com', 'ShannonMorrow@kompetez.com',
+            'AlexanderCervantes@kompetez.com', 'BrandonTorres@kompetez.com', 'LeonardYoung@kompetez.com',
+            'MichaelWashington@kompetez.com', 'ShannonBurton@kompetez.com', 'AudreyMassey@kompetez.com', 'JamesKing@kompetez.com',
+            'JessicaPeterson@kompetez.com', 'NathanSingh@kompetez.com', 'Dr.LisaSims@kompetez.com', 'TaraRobbins@kompetez.com',
+            'MaryConner@kompetez.com', 'RobertoBell@kompetez.com', 'JeremyHenry@kompetez.com', 'LauraWalker@kompetez.com',
+            'TiffanyLewis@kompetez.com', 'EricWong@kompetez.com', 'MonicaShaw@kompetez.com', 'AdamKirby@kompetez.com',
+            'RyanPrice@kompetez.com', 'AnthonyCooper@kompetez.com', 'JacobWilson@kompetez.com', 'KarenWalker@kompetez.com', 
+            'KarenHenry@kompetez.com', 'JesseLittle@kompetez.com', 'LydiaOwens@kompetez.com', 'JeffreyJuarez@kompetez.com',
+            'MatthewStevenson@kompetez.com', 'MikaylaSmith@kompetez.com', 'JulieSmith@kompetez.com', 'JasonMoore@kompetez.com',
+            'EricWalsh@kompetez.com', 'JerryObrien@kompetez.com', 'GraceDavis@kompetez.com', 'ScottBrown@kompetez.com',
+            'LukeReid@kompetez.com', 'PaulCarter@kompetez.com',
+            'AmySaunders@kompetez.com', 'SydneyTorres@kompetez.com', 'DavidArellano@kompetez.com', 'AmySanchez@kompetez.com',
+            'AmyOlson@kompetez.com', 'DanielleZavala@kompetez.com', 'AshleyPerez@kompetez.com', 'CynthiaLane@kompetez.com',
+            'ChristineJohnson@kompetez.com', 'SarahStanton@kompetez.com', 'StaceyStevenson@kompetez.com', 'DeborahButler@kompetez.com',
+            'KevinMcgee@kompetez.com', 'SallyBuckley@kompetez.com', 'RobertLong@kompetez.com', 'RobertSexton@kompetez.com', 
+            'AshleyGardner@kompetez.com', 'BrandiDavis@kompetez.com', 'AlyssaBrownMD@kompetez.com', 'BarbaraBowen@kompetez.com', 
+            'DavidHuang@kompetez.com', 'AlexanderMartinez@kompetez.com', 'SarahBrown@kompetez.com', 'AntonioWilliams@kompetez.com', 
+            'KathrynThompson@kompetez.com', 'MelissaWade@kompetez.com', 'Dr.JeffreyKelly@kompetez.com', 'CrystalBentley@kompetez.com',
+            'JustinRose@kompetez.com', 'EddieOrtega@kompetez.com', 'BrandyRamirez@kompetez.com', 'DavidRush@kompetez.com', 
+            'VincentConley@kompetez.com', 'SusanWoods@kompetez.com', 'JefferyKaiserMD@kompetez.com', 'RebeccaFerguson@kompetez.com',
+            'BrianBrown@kompetez.com', 'GloriaDavis@kompetez.com', 'MatthewDavis@kompetez.com', 'ElizabethFields@kompetez.com', 
+            'BriannaDuarte@kompetez.com', 'AlanCole@kompetez.com', 'WilliamSanders@kompetez.com', 'AnnaSchmidt@kompetez.com', 
+            'CrystalRyan@kompetez.com', 'ToddMcgee@kompetez.com', 'ElizabethColeman@kompetez.com', 'KevinKemp@kompetez.com', 
+            'MariaObrien@kompetez.com', 'MelissaBrown@kompetez.com', 'NathanPeters@kompetez.com', 'JasmineRamos@kompetez.com',
+            'DennisHerman@kompetez.com', 'ShaneBlackburn@kompetez.com', 'BrendaDiaz@kompetez.com', 'FrancisThompson@kompetez.com',
+            'WilliamWilliams@kompetez.com', 'DaisyBall@kompetez.com', 'LauraAustin@kompetez.com', 'PatrickWhite@kompetez.com', 
+            'SherryMccormick@kompetez.com', 'SarahMurray@kompetez.com', 'BarrySmith@kompetez.com', 'AnnaYoung@kompetez.com',
+            'AdamMckinney@kompetez.com', 'CheyenneBrown@kompetez.com', 'MatthewFischer@kompetez.com', 'ShawnSosa@kompetez.com', 
+            'GregorySmith@kompetez.com', 'JonathanThomas@kompetez.com', 'JackMoyer@kompetez.com', 'TaylorLara@kompetez.com', 
+            'BelindaAndrews@kompetez.com', 'ThomasPhillips@kompetez.com', 'DonaldAnderson@kompetez.com', 'PaulBrooks@kompetez.com',
+            'SallyWood@kompetez.com', 'DustinNeal@kompetez.com', 'RobertCooper@kompetez.com', 'DeniseHuerta@kompetez.com',
+            'MarkGoodwin@kompetez.com', 'SaraNichols@kompetez.com', 'AbigailDaniel@kompetez.com', 'BrendaBradley@kompetez.com', 
+            'MichaelGiles@kompetez.com', 'TravisReilly@kompetez.com', 'HollyAvery@kompetez.com', 'RickeyPratt@kompetez.com', 
+            'CharlesMartinez@kompetez.com', 'NatashaBailey@kompetez.com', 'JoshuaMarquez@kompetez.com', 'Mr.AntonioJones@kompetez.com',
+            'DanielParker@kompetez.com', 'DavidWilliams@kompetez.com', 'TerryCummings@kompetez.com', 'BrianThomas@kompetez.com', 
+            'NathanPhillips@kompetez.com', 'CaitlinCalderon@kompetez.com', 'ChristineDurham@kompetez.com'
             ]
 
 from time import sleep
@@ -130,32 +131,54 @@ import time
 driver=webdriver.Chrome(executable_path=r"C:\Users\aamir\Downloads\chromedriver_win32 (2)\chromedriver.exe")
 
 
+HOST_URL='http://kompetes.co.uk/'
 def registrationTest(email,password,dob):
-    WEBSITE_LINK='http://127.0.0.1:8000/register/'
+    WEBSITE_LINK=HOST_URL+'register/'
     driver.get(WEBSITE_LINK)
     driver.find_element_by_xpath('//*[@id="id_email"]').send_keys(email)
     driver.find_element_by_xpath('//*[@id="id_password1"]').send_keys(password)
     driver.find_element_by_xpath('//*[@id="id_password2"]').send_keys(password)
     driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div/div/div/div[2]/form/input[2]').send_keys(dob)
-    driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div/div/div/div[2]/form/div[4]/label').click()
+    time.sleep(3)
+    driver.find_element_by_xpath(
+        '/html/body/div[1]/div[4]/div/div/div/div/div[2]/form/div[4]/label/span').click()
     driver.find_element_by_xpath('//*[@id="submitRegister"]').click()
 
 
+
+def NoOfTimesYouWantToRegisterTeams(num):
+    try:
+        for i in range(num):
+            registrationTest(userData[i],'aamir123','12/12/2020')
+    except:
+        pass
+
 def loginTest(email,paswd):
-    WEBSITE_LINK='http://127.0.0.1:8000/login/'
+    time.sleep(3)
+    WEBSITE_LINK=HOST_URL+'login/'
     driver.get(WEBSITE_LINK)
     driver.find_element_by_xpath('//*[@id="id_email"]').send_keys(email)
     driver.find_element_by_xpath('//*[@id="id_password"]').send_keys(paswd)
+    time.sleep(3)
     driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div/div/div/div[2]/form/div[4]/input').click()
 
 
 def loginTestForAdminUser(email,paswd):
-    WEBSITE_LINK='http://127.0.0.1:8000/admin/login/'
+    WEBSITE_LINK=HOST_URL+'admin/login/'
     driver.get(WEBSITE_LINK)
     driver.find_element_by_xpath('//*[@id="id_email"]').send_keys(email)
     driver.find_element_by_xpath('//*[@id="id_password"]').send_keys(paswd)
     driver.find_element_by_xpath('/html/body/main/form/input[4]').click()
 
+def logintestForSuperUser(email,paswd):
+    WEBSITE_LINK = HOST_URL+'admin-dev/login/'
+    driver.get(WEBSITE_LINK)
+    time.sleep(3)
+    driver.find_element_by_xpath('//*[@id = "id_username"]').send_keys(email)
+    driver.find_element_by_xpath('//*[@id="id_password"]').send_keys(paswd)
+    time.sleep(3)
+    driver.find_element_by_xpath('//*[@id="login-form"]/div[3]/input').click()
+   
 # status = 1/0
 def createTournament(
     title,desc,path,prize_money,entry_fee,prize,reg_date_time,start_date_time,end_date_time,
@@ -197,7 +220,7 @@ def createTournament(
 
 
 def checkWeatherTournamentIsPublished():
-    WEBSITE_LINK='http://127.0.0.1:8000/tournament/'
+    WEBSITE_LINK=HOST_URL+'tournament/'
     driver.get(WEBSITE_LINK)
     time.sleep(3)
     driver.close()
@@ -206,20 +229,18 @@ def checkWeatherTournamentIsPublished():
 def makeTournamentStatusPublish(id):
     loginTestForAdminUser('admin@gmail.com',1234)
     time.sleep(3)
-    WEBSITE_LINK='http://127.0.0.1:8000/admin/tournaments/{}/edit/'.format(id)
+    WEBSITE_LINK=HOST_URL+'admin/tournaments/{}/edit/'.format(id)
     driver.get(WEBSITE_LINK)    
     select = Select(driver.find_element_by_id('id_status'))
     select.select_by_index(1)
     time.sleep(2)
     driver.find_element_by_xpath('/html/body/main/form/div/div[2]/div[6]/button').click()
-    time.sleep(3)
-    driver.get('http://127.0.0.1:8000/admin/tournaments/{}/'.format(5))    
-    time.sleep(3)
-    driver.close()
+
+
 
 
 def createTeam(team_name,profile_image_path):
-    WEBSITE_LINK='http://127.0.0.1:8000/team/create/'
+    WEBSITE_LINK=HOST_URL+'team/create/'
     driver.get(WEBSITE_LINK)    
     time.sleep(3)
     driver.find_element_by_xpath('//*[@id="id_name"]').send_keys(team_name)
@@ -227,28 +248,36 @@ def createTeam(team_name,profile_image_path):
     time.sleep(3)
     driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div/div/div/div[2]/form/div[4]/input').click()
 
-#fiveEmails  AaronLee@yahoo.com AbigailBrooks@hotmail.com AdamTurner@yahoo.com AlanJones@yahoo.com
+
 def sendInvites():
     
-    WEBSITE_LINK='http://127.0.0.1:8000/team/players/'
+    WEBSITE_LINK=HOST_URL+'team/players/'
     driver.get(WEBSITE_LINK)
     driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div[3]/div/table/tbody/tr[1]/td[5]/a').click()
     driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div[3]/div/table/tbody/tr[1]/td[5]/a').click()
     driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div[3]/div/table/tbody/tr[1]/td[5]/a').click()
     driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div[3]/div/table/tbody/tr[1]/td[5]/a').click()
+
+
+def acceptInviteExceptionCase():
+    time.sleep(3)       
+    WEBSITE_LINK=HOST_URL+'playerDashboard/team/invite/'
+    driver.get(WEBSITE_LINK)        
+    WebDriverWait(driver, 3).until(EC.element_to_be_clickable(
+        (By.XPATH, "/html/body/div[1]/div[5]/div/div[2]/div/div/div[2]/div/table/tbody/tr/td[3]/a"))).click()
 
 
 def acceptInvite(p1):
-    loginTest(p1,'letmein')
-    WEBSITE_LINK='http://127.0.0.1:8000/playerDashboard/team/invite/'
-    driver.get(WEBSITE_LINK)
-    time.sleep(3)
-    driver.find_element_by_xpath('/html/body/div[1]/div[5]/div/div[2]/div/div/div[2]/div/table/tbody/tr/td[3]/a').click()
-                                 
+    loginTest(p1,'aamir123')
+    try:
+        acceptInviteExceptionCase()
+    except:     
+        acceptInvite(p1)
 
+            
 def applyForTournament(id):
 
-    WEBSITE_LINK='http://127.0.0.1:8000/tournament/{}/'.format(id)
+    WEBSITE_LINK=HOST_URL+'tournament/{}/'.format(id)
     driver.get(WEBSITE_LINK)    
     time.sleep(3)
     driver.find_element_by_xpath(
@@ -256,8 +285,7 @@ def applyForTournament(id):
 
 
 def inviteForTeam(searchEmail):
-    searchEmail=searchEmail.replace('@kompetez','')
-    WEBSITE_LINK = 'http://127.0.0.1:8000/team/players/'
+    WEBSITE_LINK = HOST_URL+'team/players/'
     driver.get(WEBSITE_LINK)
     driver.find_element_by_xpath(
         '//*[@id = "newsletter"]/div/input').send_keys(searchEmail)
@@ -273,75 +301,51 @@ def inviteForTeam(searchEmail):
 def completeUserRegistrationToTournamentApply(Counter, teamProfile_path,tournamentID):
 
     lead=userData[Counter]
-    loginTest(userData[Counter], 'letmein')
+    loginTest(userData[Counter], 'aamir123')
     createTeam(teamName[Counter], teamProfile_path)
     Counter=Counter+1
 
     inviteForTeam(userData[Counter])
     acceptInvite(userData[Counter])
-    loginTest(lead, 'letmein')
+    loginTest(lead, 'aamir123')
 
     Counter=Counter+1
     inviteForTeam(userData[Counter])
     acceptInvite(userData[Counter])
-    loginTest(lead, 'letmein')
+    loginTest(lead, 'aamir123')
 
     Counter=Counter+1
     inviteForTeam(userData[Counter])
     acceptInvite(userData[Counter])
-    loginTest(lead, 'letmein')
+    loginTest(lead, 'aamir123')
 
     Counter=Counter+1
     inviteForTeam(userData[Counter])
     acceptInvite(userData[Counter])
-    loginTest(lead, 'letmein')
+    loginTest(lead, 'aamir123')
 
-    applyForTournament(4)
+
+def NoOfTimesTeamShouldApply(Num,tournamentID):
+    players=userData[1::5]
+  
+    for i in range(Num):
+        loginTest(players[i],'aamir123')
+        applyForTournament(tournamentID)
 
 
 def NoOfTeamstUWantToMake(tournamentID):
     teamProfile_path='E:/TechyLem/Learning Meterials/selenium/project/Kompetez/teamProfileImage.jpg'
-    for _ in range(0,160,5):
+    for _ in range(1,160,5):
         temp=_
+        completeUserRegistrationToTournamentApply(temp,teamProfile_path, tournamentID)
         print(_)
-        try:
-            completeUserRegistrationToTournamentApply(temp,teamProfile_path, 4)
-        except:
-            pass
 
 
-# createTeam('esports team',teamProfile_path)
-# registrationTest('samar@gmail.com','aamir123','12/12/2020') 
-# loginTest('samar@gmail.com','aamir123')
-# loginTestForAdminUser('admin@gmail.com','1234')
+
+
 path='E:/TechyLem/Learning Meterials/selenium/project/Kompetez/gamingCoverPic.jpg'
-# createTournament(
-#                 'Battle Ground','This tournament will be held soon.It is a greate opportunity for Gamers',path,
-#                 1200,12.0,'very big prize','2020-10-14 10:34:56','2020-10-15 10:34:56','2020-10-20 10:34:56',
-#                 'http://www.facebook.com','we have very big rules',
-#                 'we have very big policies',0,2
-#                 )
-# checkWeatherTournamentIsPublished()
-# makeTournamentStatusPublish(4)
-# applyForTournament(4)
-
-# teamProfile_path='E:/TechyLem/Learning Meterials/selenium/project/Kompetez/teamProfileImage.jpg'
-# loginTest('samar@gmail.com','aamir123')
-# createTeam('esports team',teamProfile_path)
 
 
-# loginTest('samar@gmail.com','aamir123')
-# sendInvites()
-# acceptInvite('AbigailBrooks@hotmail.com')
-# acceptInvite('AdamTurner@yahoo.com',)
-# acceptInvite('AlanJones@yahoo.com')
-# acceptInvite('AaronLee@yahoo.com')
-
-# loginTest('samar@gmail.com','aamir123')
-# applyForTournament(4)
-
-
-# NoOfTestUWantToMake()
 def CloseRegistrationTournament():
     loginTestForAdminUser('admin@gmail.com', '1234')
     driver.find_element_by_xpath(
@@ -354,35 +358,50 @@ def rejectRequestForTeam():
     driver.find_element_by_xpath('//*[@id = "collapsePlayer"]/table/tbody/tr[1]/td[6]/a[2]').click()
 
 
+def getTournamentPageById(tournamentID):
+    link = HOST_URL+'admin/tournaments/'
+    driver.get(link)
+    rows = driver.find_elements_by_xpath(
+    '/html/body/main/div[2]/div/div[2]/table/tbody/tr')
+
+    for i in range(1, len(rows)+1):
+        idFromTable = driver.find_element_by_xpath(
+            '/html/body/main/div[2]/div/div[2]/table/tbody/tr[{}]/td[1]'.format(i)).get_attribute('innerHTML')
+        if idFromTable == str(tournamentID):
+            driver.find_element_by_xpath(
+            '/html/body/main/div[2]/div/div[2]/table/tbody/tr[{}]/td[6]/a[1]'.format(i)).click()
+
 
 def acceptsAllInvitesForTournament():
-
-    driver.find_element_by_xpath(
-        '//*[@id="collapsePlayer"]/table/tbody/tr[1]/td[6]/a[1]').click()
+    try:
+        driver.find_element_by_xpath(
+            '//*[@id="collapsePlayer"]/table/tbody/tr[1]/td[6]/a[1]').click()
+    except:
+        time.sleep(4)
+        acceptsAllInvitesForTournament()
             
 
-def NoOfTimesManagerWantToAcceptRequest(noOfTimes):
-    
+def NoOfTimesManagerWantToAcceptRequest(noOfTimes,tournamentID):
+
     loginTestForAdminUser('admin@gmail.com', '1234')
     time.sleep(2)
-    driver.find_element_by_xpath(
-    '/html/body/main/div[2]/div/div[2]/table/tbody/tr[2]/td[6]/a[1]').click()
+    getTournamentPageById(tournamentID)
     time.sleep(2)
     for _ in range(noOfTimes):
         acceptsAllInvitesForTournament()
 
-    rejectRequestForTeam()
-
+  
 def setGroupsFormTeam(tournamentID):
     loginTestForAdminUser('admin@gmail.com', '1234')
-    WEBSITE_LINK = 'http://127.0.0.1:8000/admin/tournaments/setup/{}/'.format(tournamentID)
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/setup/{}/'.format(tournamentID)
     driver.get(WEBSITE_LINK)
     for _ in range(32):
         driver.find_element_by_xpath('//*[@id="SelectionRow"]/td/input').click()
 
+
 def createMatches(tournamentID):
     loginTestForAdminUser('admin@gmail.com', '1234')
-    WEBSITE_LINK = 'http://127.0.0.1:8000/admin/tournaments/setup/{}/'.format(tournamentID)
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/setup/{}/'.format(tournamentID)
     driver.get(WEBSITE_LINK)
     driver.find_element_by_xpath('/html/body/main/div[2]/div/div/a[2]').click()
     driver.find_element_by_xpath('/html/body/main/div[2]/div/div/table/tbody/tr[7]/td/a').click()
@@ -390,7 +409,7 @@ def createMatches(tournamentID):
 
 def decideWinner(tournamentID):
     loginTestForAdminUser('admin@gmail.com', '1234')
-    WEBSITE_LINK = 'http://127.0.0.1:8000/admin/tournaments/{}/matches/'.format(
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/{}/matches/'.format(
         tournamentID)
     driver.get(WEBSITE_LINK)
     driver.find_element_by_xpath('/html/body/main/div[2]/div/div[2]/table/tbody/tr[1]/td[12]/a[2]').click()
@@ -412,30 +431,120 @@ def decideWinner(tournamentID):
 
 def startMatchesRoundAndEndThem(tournamentID):        
     loginTestForAdminUser('admin@gmail.com',1234)
-    WEBSITE_LINK = 'http://127.0.0.1:8000/admin/tournaments/{}/matches/'.format(tournamentID)
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/{}/matches/'.format(tournamentID)
     driver.get(WEBSITE_LINK)
+    try:
+        for _ in range(1,50):                                                                                       #click on details button
+            temp=driver.find_element_by_xpath("/html/body/main/div[2]/div/div[2]/table/tbody/tr[1]/td[12]/a[1]")    #find first element in table
+            driver.get(temp.get_attribute('href'))                                                                  # get it's url and go for it
+                                                                                
+            driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/a').click()                                 #clicks on start match
+            time.sleep(3)
+            driver.find_element_by_xpath('/html/body/main/div[2]/div[3]/div/table/thead/tr[1]/th[2]/a').click()     #click on start round
+            driver.find_element_by_xpath('/html/body/main/div[2]/div[3]/div/a').click()                             #click again to confirm starting round
+            driver.find_element_by_xpath('/html/body/main/div[2]/div[3]/div[2]/div[1]/a[1]').click()                #click for end round
+            driver.find_element_by_xpath('//*[@id="teamA"]').click()                                                #select a team player
 
-    for _ in range(1,34): #click on details button
-        driver.find_element_by_xpath('/html/body/main/div[2]/div/div[2]/table/tbody/tr[{}]/td[12]/a[1]'.format(_)).click() 
-        driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/a').click() #clicks on start match
-        time.sleep(3)
-        driver.find_element_by_xpath('/html/body/main/div[2]/div[3]/div/table/thead/tr[1]/th[2]/a').click() #click on start round
-        driver.find_element_by_xpath('/html/body/main/div[2]/div[3]/div/a').click() #click again to confirm starting round
-        driver.find_element_by_xpath('/html/body/main/div[2]/div[3]/div[2]/div[1]/a[1]').click() #click for end round
-        driver.find_element_by_xpath('//*[@id="teamA"]').click() #select a team player
-
-        driver.find_element_by_xpath('/html/body/main/div[2]/div[4]/div/form/input[2]').click() #click on end round button
-        time.sleep(3)
-        driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/a').click() #go back to match
-        time.sleep(3)
-        driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/a').click() #end match
-        time.sleep(3)
-        driver.find_element_by_xpath('/html/body/main/div[2]/form/input[2]').click() #confirm end match
-        time.sleep(3)
-        WEBSITE_LINK = 'http://127.0.0.1:8000/admin/tournaments/{}/matches/'.format(tournamentID)
-        driver.get(WEBSITE_LINK)
+            driver.find_element_by_xpath('/html/body/main/div[2]/div[4]/div/form/input[2]').click()                 #click on end round button
+            time.sleep(3)
+            driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/a').click()                                 #go back to match
+            time.sleep(3)
+            driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/a').click()                                 #end match
+            time.sleep(3)
+            driver.find_element_by_xpath('/html/body/main/div[2]/form/input[2]').click()                            #confirm end match
+            time.sleep(3)
+            WEBSITE_LINK = HOST_URL+'admin/tournaments/{}/matches/'.format(tournamentID)
+            driver.get(WEBSITE_LINK)
+    except:
+        pass
 
 
+def closeEliminationRound(tournamentID):
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/{}/'.format(tournamentID)
+    driver.get(WEBSITE_LINK)
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[2]/div[2]/dl/dd[8]/a').click()
+
+
+def closeQuartarFinal(tournamentID):
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/{}/'.format(tournamentID)
+    driver.get(WEBSITE_LINK)
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[2]/div[2]/dl/dd[8]/a').click()
+
+
+def closeQuartarFinal(tournamentID):
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/{}/'.format(
+        tournamentID)
+    driver.get(WEBSITE_LINK)
+    driver.find_element_by_xpath(
+        '/html/body/main/div[2]/div[2]/div[2]/dl/dd[8]/a').click()
+
+
+def closeSemiFinal(tournamentID):
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/{}/'.format(
+        tournamentID)
+    driver.get(WEBSITE_LINK)
+    driver.find_element_by_xpath(
+        '/html/body/main/div[2]/div[2]/div[2]/dl/dd[8]/a').click()
+
+
+def closeFinal(tournamentID):
+    WEBSITE_LINK = HOST_URL+'admin/tournaments/{}/'.format(
+        tournamentID)
+    driver.get(WEBSITE_LINK)
+    driver.find_element_by_xpath(
+        '/html/body/main/div[2]/div[2]/div[2]/dl/dd[8]/a').click()
+
+
+def logOUT():
+    link = HOST_URL+'logout/'
+    driver.get(link)
+
+
+def confirmQualifier():
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[1]/div/table/tbody/tr[13]/td/input').click()
+
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[2]/div/table/tbody/tr[13]/td/input').click()
+
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[3]/div/table/tbody/tr[13]/td/input').click()
+
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[4]/div/table/tbody/tr[13]/td/input').click()
+
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[5]/div/table/tbody/tr[13]/td/input').click()
+
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[6]/div/table/tbody/tr[13]/td/input').click()
+
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[7]/div/table/tbody/tr[13]/td/input').click()
+
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[1]/div[8]/div/table/tbody/tr[13]/td/input').click()
+
+    driver.find_element_by_xpath('/html/body/main/div[2]/div[2]/div/a').click()
+
+def deleteTournament(tournamentID):
+    driver.get(HOST_URL+'admin-dev/manager/tournament/{}/change/'.format(tournamentID))
+    driver.find_element_by_xpath('//*[@id="tournament_form"]/div/div/p/a').click()
+    driver.find_element_by_xpath('//input[@type="submit"]').click()
+
+
+def deleteUsers():
+    logintestForSuperUser('admin@gmail.com', '1234')
+    driver.get(HOST_URL+'admin-dev/account/user/?all=&is_staff__exact=0&is_superuser__exact=0')
+    for i in range(1,200):
+        try:
+            temp=driver.find_element_by_xpath(
+                '//*[@id="result_list"]/tbody/tr[{}]/th/a'.format(i)).get_attribute('innerHTML')
+            if(temp.find('@kompetez') != -1 ):
+                driver.find_element_by_xpath(
+                    '//*[@id = "result_list"]/tbody/tr[{}]/td[1]/input'.format(i)).click()
+        except:
+            continue
+    select = Select(driver.find_element_by_xpath('//*[@id = "changelist-form"]/div[1]/label/select'))
+    select.select_by_index(1)
+    driver.find_element_by_xpath('//*[@id="changelist-form"]/div[1]/button').click() #click on GO button
+
+    driver.find_element_by_xpath('//input[@type="submit"]').click()
+    
+
+        
 # startMatchesRoundAndEndThem()
 
 #--------------------------------------------------------------------------------------------------------------#
@@ -443,47 +552,61 @@ def startMatchesRoundAndEndThem(tournamentID):
 #--------------------------------------------------------------------------------------------------------------#
 
 
-tournamentID=8
+NoOfTimesYouWantToRegisterTeams(200)
+
 noOfTeams=32
 
-# createTournament(
-#                 'Battle Ground','This tournament will be held soon.It is a greate opportunity for Gamers',path,
-#                 1200,12.0,'very big prize','2020-10-14 10:34:56','2020-10-15 10:34:56','2020-10-20 10:34:56',
-#                 'http://www.facebook.com','we have very big rules',
-#                 'we have very big policies',0,2
-#                 )
-# makeTournamentStatusPublish(tournamentID)
-# NoOfTeamstUWantToMake(tournamentID)
-# NoOfTimesManagerWantToAcceptRequest(noOfTeams)
-# setGroupsFormTeam(tournamentID)
-# createMatches(tournamentID)
-# startMatchesRoundAndEndThem(tournamentID)
+createTournament(
+                'Battle Ground','This tournament will be hel soon.It is a greate opportunity for Gamers',path,
+                1200,12.0,'very big prize','2020-10-14 10:34:56','2020-10-15 10:34:56','2020-10-20 10:34:56',
+                'http://www.facebook.com','we have very big rules',
+                'we have very big policies',0,2
+                )
+
+tournamentID=driver.current_url
+tournamentID=tournamentID.replace(HOST_URL+'admin/tournaments/', '')
+tournamentID=int(tournamentID.replace('/', ''))
+
+makeTournamentStatusPublish(tournamentID)
+time.sleep(3)
+NoOfTeamstUWantToMake(tournamentID)
+tournamentID=66
+NoOfTimesTeamShouldApply(noOfTeams,tournamentID)
 
 
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+NoOfTimesManagerWantToAcceptRequest(noOfTeams, tournamentID)
+closeEliminationRound(tournamentID)
 
-options = webdriver.ChromeOptions()
-options.add_argument("start-maximized")
-options.add_argument("disable-infobars")
-options.add_argument("--disable-extensions")
-loginTestForAdminUser('admin@gmail.com',1234)
+setGroupsFormTeam(tournamentID)
+createMatches(tournamentID)  
+ 
+startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
+closeEliminationRound(tournamentID)    
+confirmQualifier()
+startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
+closeEliminationRound(tournamentID)    
 
-WEBSITE_LINK='http://127.0.0.1:8000/admin/tournaments/8/matches/'
-driver.get(WEBSITE_LINK)
-driver.find_element(
-    By.XPATH, '//*[@id="navbarsExampleDefault"]/ul[2]/li[2]/a').click()
-driver.find_element(
-    By.XPATH, '/html/body/main/div[2]/div/div[2]/table/tbody/tr[3]/td[6]/a[1]'
-).click()
-driver.find_element(
-    By.XPATH, '/html/body/main/div[2]/div[3]/a'
-).click()
+  
 
 
-driver.implicitly_wait(0)
+# #------------------------Elimination Stage------------------------------------
+startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
+closeEliminationRound(tournamentID)       
 
-if driver.find_element_by_id("/html/body/main/div[2]/div/div[2]/table/tbody/tr[1]/td[12]/a[1]']"):
- print('done')
+# #------------------------Quatar Final Stage-----------------------------------
+startMatchesRoundAndEndThem(tournamentID) #play matches of quartar Finale
+closeQuartarFinal(tournamentID)            #close quartar matches
+
+#------------------------Semi Final  Stage------------------------------------
+startMatchesRoundAndEndThem(tournamentID)  # play matches of Semi Finale
+closeQuartarFinal(tournamentID)            #close quartar matches
+
+#------------------------ Final  Stage------------------------------------
+startMatchesRoundAndEndThem(tournamentID)  # play matches of Semi Finale
+
+time.sleep(10)
+deleteUsers()
+deleteTournament(tournamentID)
+
 
 
