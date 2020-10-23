@@ -237,8 +237,6 @@ def makeTournamentStatusPublish(id):
     driver.find_element_by_xpath('/html/body/main/form/div/div[2]/div[6]/button').click()
 
 
-
-
 def createTeam(team_name,profile_image_path):
     WEBSITE_LINK=HOST_URL+'team/create/'
     driver.get(WEBSITE_LINK)    
@@ -334,16 +332,18 @@ def NoOfTimesTeamShouldApply(Num,tournamentID):
 
 
 def NoOfTeamstUWantToMake(tournamentID):
-    teamProfile_path='E:/TechyLem/Learning Meterials/selenium/project/Kompetez/teamProfileImage.jpg'
+    teamProfile_path=currentDir+'\teamProfileImage.jpg'
     for _ in range(1,160,5):
         temp=_
         completeUserRegistrationToTournamentApply(temp,teamProfile_path, tournamentID)
         print(_)
 
+import os
+
+currentDir=os.getcwd()
 
 
-
-path='E:/TechyLem/Learning Meterials/selenium/project/Kompetez/gamingCoverPic.jpg'
+path=currentDir+'\gamingCoverPic.jpg'
 
 
 def CloseRegistrationTournament():
@@ -552,61 +552,64 @@ def deleteUsers():
 #--------------------------------------------------------------------------------------------------------------#
 
 
-NoOfTimesYouWantToRegisterTeams(200)
+# NoOfTimesYouWantToRegisterTeams(200)
 
-noOfTeams=32
+# noOfTeams=32
 
-createTournament(
-                'Battle Ground','This tournament will be hel soon.It is a greate opportunity for Gamers',path,
-                1200,12.0,'very big prize','2020-10-14 10:34:56','2020-10-15 10:34:56','2020-10-20 10:34:56',
-                'http://www.facebook.com','we have very big rules',
-                'we have very big policies',0,2
-                )
+# createTournament(
+#                 'Battle Ground','This tournament will be hel soon.It is a greate opportunity for Gamers',path,
+#                 1200,12.0,'very big prize','2020-10-14 10:34:56','2020-10-15 10:34:56','2020-10-20 10:34:56',
+#                 'http://www.facebook.com','we have very big rules',
+#                 'we have very big policies',0,2
+#                 )
 
-tournamentID=driver.current_url
-tournamentID=tournamentID.replace(HOST_URL+'admin/tournaments/', '')
-tournamentID=int(tournamentID.replace('/', ''))
+# tournamentID=driver.current_url
+# tournamentID=tournamentID.replace(HOST_URL+'admin/tournaments/', '')
+# tournamentID=int(tournamentID.replace('/', ''))
 
-makeTournamentStatusPublish(tournamentID)
-time.sleep(3)
-NoOfTeamstUWantToMake(tournamentID)
-tournamentID=66
-NoOfTimesTeamShouldApply(noOfTeams,tournamentID)
+# makeTournamentStatusPublish(tournamentID)
+# time.sleep(3)
+# NoOfTeamstUWantToMake(tournamentID)
+# tournamentID=66
+# NoOfTimesTeamShouldApply(noOfTeams,tournamentID)
 
 
-NoOfTimesManagerWantToAcceptRequest(noOfTeams, tournamentID)
-closeEliminationRound(tournamentID)
+# NoOfTimesManagerWantToAcceptRequest(noOfTeams, tournamentID)
+# closeEliminationRound(tournamentID)
 
-setGroupsFormTeam(tournamentID)
-createMatches(tournamentID)  
+# setGroupsFormTeam(tournamentID)
+# createMatches(tournamentID)  
  
-startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
-closeEliminationRound(tournamentID)    
-confirmQualifier()
-startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
-closeEliminationRound(tournamentID)    
+# startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
+# closeEliminationRound(tournamentID)    
+# confirmQualifier()
+# startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
+# closeEliminationRound(tournamentID)    
 
   
 
 
-# #------------------------Elimination Stage------------------------------------
-startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
-closeEliminationRound(tournamentID)       
+# # #------------------------Elimination Stage------------------------------------
+# startMatchesRoundAndEndThem(tournamentID) #play matches of Elimination round
+# closeEliminationRound(tournamentID)       
 
-# #------------------------Quatar Final Stage-----------------------------------
-startMatchesRoundAndEndThem(tournamentID) #play matches of quartar Finale
-closeQuartarFinal(tournamentID)            #close quartar matches
+# # #------------------------Quatar Final Stage-----------------------------------
+# startMatchesRoundAndEndThem(tournamentID) #play matches of quartar Finale
+# closeQuartarFinal(tournamentID)            #close quartar matches
 
-#------------------------Semi Final  Stage------------------------------------
-startMatchesRoundAndEndThem(tournamentID)  # play matches of Semi Finale
-closeQuartarFinal(tournamentID)            #close quartar matches
+# #------------------------Semi Final  Stage------------------------------------
+# startMatchesRoundAndEndThem(tournamentID)  # play matches of Semi Finale
+# closeQuartarFinal(tournamentID)            #close quartar matches
 
-#------------------------ Final  Stage------------------------------------
-startMatchesRoundAndEndThem(tournamentID)  # play matches of Semi Finale
+# #------------------------ Final  Stage------------------------------------
+# startMatchesRoundAndEndThem(tournamentID)  # play matches of Semi Finale
 
-time.sleep(10)
-deleteUsers()
-deleteTournament(tournamentID)
+# time.sleep(10)
+# deleteUsers()
+# deleteTournament(tournamentID)
 
 
+import os
+
+print(os.getcwd())
 
